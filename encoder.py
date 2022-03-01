@@ -25,3 +25,6 @@ def messageProcessor(mode, key, msg):
     else:
         result = "Invalid Mode"
     return result
+
+def exit(window):
+    window.destroy()

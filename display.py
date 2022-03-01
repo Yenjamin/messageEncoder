@@ -12,8 +12,6 @@ class display(Tk):
         key = StringVar()
         mode = StringVar()
         result = StringVar()
-        def exit():
-            self.destroy()
         def reset():
             msg.set("")
             key.set("")
@@ -31,5 +29,5 @@ class display(Tk):
         Entry(self, font = "arial 10 bold", textvariable = result, bg ="ghost white", state="readonly").place(x=290, y = 150)
         Button(self, font = "arial 10 bold", text = "RESULT"  ,padx =2,bg ="LightGray" ,command = setResult).place(x=60, y = 150)
         Button(self, font = "arial 10 bold" ,text ="RESET" ,width =6, command = reset,bg = "LimeGreen", padx=2).place(x=80, y = 190)
-        Button(self, font = "arial 10 bold",text= "EXIT" , width = 6, command = exit,bg = "OrangeRed", padx=2, pady=2).place(x=180, y = 190)
+        Button(self, font = "arial 10 bold",text= "EXIT" , width = 6, command = lambda: encoder.exit(self),bg = "OrangeRed", padx=2, pady=2).place(x=180, y = 190)
         self.mainloop()
